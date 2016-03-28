@@ -18,6 +18,9 @@ class Jwt
 
   public static function validate($token){
     $tokenExploded = explode(".",$token);
+    if(count($tokenExploded)!=3){
+            return false;
+        }
     $header = $tokenExploded[0];
     $payload = $tokenExploded[1];
     $signatureToCheck = $tokenExploded[2];
@@ -35,6 +38,9 @@ class Jwt
 
   public static function payloadDecode($token){
     $tokenExploded = explode(".",$token);
+    if(count($tokenExploded)!=3){
+            return false;
+        }
     $header = $tokenExploded[0];
     $payload = $tokenExploded[1];
     $signatureToCheck = $tokenExploded[2];

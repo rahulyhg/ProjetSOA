@@ -12,9 +12,9 @@ class Controller extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 
-    protected function jsonView($viewPath){
+    protected function jsonView($viewPath, $data =array()){
       return response(
-      View::make($viewPath),
+      View::make($viewPath,$data),
       200,
       ['Content-Type'=>'application/json']
     );

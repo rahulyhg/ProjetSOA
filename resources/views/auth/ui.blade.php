@@ -5,6 +5,6 @@
 "elements":[
     { "view":"text", "label":"email", "name":"email"},
     { "view":"text", "type":"password", "name":"password", "label":"password"},
-    { "view":"button", "value":"Login" , "type":"form", "click":"submitAuthForm" }
+    { "view":"button", "value":"Login" , "type":"form", "css":"submitAuthForm" }
   ]
 }
