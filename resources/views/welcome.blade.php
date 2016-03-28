@@ -4,6 +4,11 @@
     @include('layouts.head')
 </head>
     <body>
+    {!! Form::open(array('action' => 'SearchController@search')) !!}
+        {!! Form::label('research', 'Your research') !!}
+        {!! Form::text('search', 'example@gmail.com'); !!}
+        {!! Form::submit('research') !!}
+    {!!  Form::close() !!}
         <script type="text/javascript" charset="utf-8">
         @include("auth.logic");
         @include("bookmarks.logic");
@@ -55,5 +60,6 @@
               });
           }
         </script>
+
     </body>
 </html>

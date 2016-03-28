@@ -37,5 +37,14 @@ class DatabaseSeeder extends Seeder
           'tasklist' => '[{ "id":1,"task":1, "status":"Number one task","note":"Nothing"},{ "id":2,"task":2, "status":"Number two task","note":"1972"}]',
         ]);
 
+        $faker = Faker\Factory::create('fr_FR');
+        $limit = 1000;
+
+        for ($i = 0; $i < $limit; $i++) {
+            DB::table('texts')->insert([
+                'title' => $faker->company,
+                'body' => $faker->realText
+            ]);
+        }
     }
 }
