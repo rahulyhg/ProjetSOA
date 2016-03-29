@@ -5,8 +5,8 @@
     </head>
     <body>
     <h1>Résultat</h1>
-
-        {{ $results }}
-
+    @foreach($results as $result)
+        {{ $result[0] }}
+    @endforeach
     </body>
 </html>

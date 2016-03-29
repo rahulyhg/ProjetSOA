@@ -117,10 +117,18 @@ class TasklistController extends Controller
     {
         //
     }
+    /**
+     * Get the tasklist.
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function getUi(Request $request){
+      // on récupère le payload et on valide qu'il soit corect
       $payload = Jwt::validate($request->header('Authorization'));
 
+        // On récupère la tasklist dans la base de données
       $tasklist = Tasklist::all()->first();
+        // Si la tasklist est inexistante on renvoit une erreur
       if(!isset($tasklist)){
         return "not ok";
       }

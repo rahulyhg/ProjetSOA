@@ -28,6 +28,9 @@ class Jwt
     $payloadDecoded = json_decode(Base64::decode($payload));
 
     $signature = Base64::encode(hash_hmac("sha256","{$header}.{$payload}", config('app.key'),true));
+
+    // Implémentation de la vérification de la validité dans le temps du token  
+
     if($signatureToCheck == $signature){
       return $payloadDecoded;
     }else{
